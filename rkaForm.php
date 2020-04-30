@@ -31,7 +31,7 @@
           <!-- linke Seite Signup-Container -->
           <div class="leftside_signup_container_input">
             <!-- Anfang leftside input container-->
-            <input type="text" name="name" value="">
+            <input type="text" name="name" value="" placeholder="Name">
             <br>
             <input type="text" name="personalnummer" value="">
             <br>
@@ -88,6 +88,22 @@
 
         <input type="checkbox" name="privatwagen" value="">
         <label for="privatwagen">Privatwagen</label>
+
+      </div>
+
+
+      <div class="flug_checkbox_container">
+        <input type="checkbox" name="flug" value="">
+        <label for="flug">Flug</label>
+
+        <label for="flug_betrag">Betrag (in €): </label>
+        <input type="text" name="flug_betrag" value="">
+        <br>
+        <label for="flugklasse">Flugklasse: </label>
+        <input type="text" name="flugklasse" value="">
+
+        <label for="zielort">Zielort: </label>
+        <input type="text" name="zielort" value="">
 
       </div>
 
