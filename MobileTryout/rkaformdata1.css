@@ -3,41 +3,150 @@
 }
 
 body{
-  background-color: #0e1e28;
+  background-color: #white;
+}
+
+ #istosLogoReference{
+  height: 120px;
+  width: auto;
+  background-color: inherit;
+  border-radius: 25px;
 }
 
 .container_wrapper{
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
-	align-content: center;
-}
-.formDisplayBackground{
-  width: 500px;
-  height: 900px;
-  background-color: #a6bfcb;
-  border-radius: 25px;
+  height: 100vh;
 }
 
 .container_inputInformation{
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  align-content: center;
-  flex-shrink: 1;
-  padding: 40px;
+  align-content: stretch;
+  padding: 20px;
+  height: 60vh;
+  box-shadow: 2px 10px 13px 0px rgba(0,0,0,0.75);
+  border-radius: 25px;
+
 }
 
 .container_inputInformation input{
   margin: 10px;
+  padding-left: 20px;
   border: none;
   border-radius: 5px;
-  border-bottom: 2px solid black;
-  background-color: #e3f4f0;
+  border-bottom: 2px solid #b5b5b5;
+  background-color: #white;
   font-size: 20px;
   font-family: sans-serif;
+  outline:none;
+}
+
+.navButtonContainer{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+
+
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #d9e3ff;
+	background-color:#42b9f5;
+	border-radius:6px;
+	border:1px solid #fcfcfc;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:10px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+  margin: 20px;
+}
+.myButton:hover {
+	background-color:#4a98f0;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButtonZurueck {
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:9px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  margin: 20px;
+}
+.myButtonZurueck:hover {
+  background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.myButtonZurueck:active {
+	position:relative;
+	top:1px;
+}
+
+.selectorButton{
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  text-align: center;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainerUpperRow{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+.buttonContainerLowerRow{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
 }
