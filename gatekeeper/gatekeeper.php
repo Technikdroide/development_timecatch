@@ -1,35 +1,34 @@
-<?php
-  include_once 'C:\Users\Alexander\Desktop\HTML Udemy\development_timecatch\gatekeeper\verify.php';
- ?>
-
 
 <!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="MobileTryout\rkaformdata1.css">
+    <!--<link rel="stylesheet" type="text/css" href="MobileTryout\rkaformdata1.css"> -->
     <title>Gatekeeper RKA</title>
   </head>
   <body>
 
-<?php
+    <div class="container_wrapper">
+      <div class="container_inputInformation">
 
-  $dbServername = "localhost";
-  $dbUsername = "root";
-  $dbPassword ="";
-  $dbName="creds";
+        <form action="authscript.php" method="POST">
+          <p>
+            <input type="text" name="user" value="" placeholder="username" id="user">
+          </p>
 
-  $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+          <p>
+            <input type="password" name="pass" value="" placeholder="password" id="pass">
+          </p>
 
-    $sql ="SELECT * FROM creds;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-    if($resultCheck > 0){
-        while($row = mysqli_fetch_assoc($result)){
-          echo $row['username'];
-        }
-    }
-?>
+          <p>
+            <input type="submit" name="btn" value="submit">
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+
 
   </body>
 </html>

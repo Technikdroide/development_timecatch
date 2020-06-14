@@ -17,23 +17,40 @@
               <img src="istos.png" alt="IstosLogo" id="istosLogoReference">
             </div>
 
+            <form id="formType" action="generator.php" method="POST">
+              <input type="text" name="nameInput" value="" placeholder="Name" size="30" formmethod="post">
+              <br>
+              <input type="text" name="pidInput" value="" placeholder="Personalnummer" size="30" formmethod="post">
+              <br>
+              <input type="text" name="workerPlace" value="" placeholder="Mitarbeiterstandort" size="30" formmethod="post">
+              <br>
+              <input type="text" name="departFrom" value="" placeholder="Von" size="30" formmethod="post">
+              <br>
+              <input type="text" name="arrivalTo" value="" placeholder="Nach" size="30" formmethod="post">
+              <br>
+              <input type="text" name="travelKindInput" value="" placeholder="Reisezweck" size="30" formmethod="post">
+              <br>
 
-            <input type="text" name="nameInput" value="" placeholder="Name" size="30" formmethod="post">
-            <br>
-            <input type="text" name="pidInput" value="" placeholder="Personalnummer" size="30" formmethod="post">
-            <br>
-            <input type="text" name="travelrouteInput" value="" placeholder="Reiseroute" size="30" formmethod="post">
-            <br>
-            <input type="text" name="departInput" value="" placeholder="Abfahrt" size="30" formmethod="post">
-            <br>
-            <input type="text" name="arrivalInput" value="" placeholder="Rueckkehr" size="30" formmethod="post">
-            <br>
-            <!-- <img src="istos.png" alt="Logo_Istos" id="istosLogo"> -->
+              <input type="text" name="travelChoiceInput" value="" placeholder="Reiseart" size="30" formmethod="post">
+              <br>
+              <input type="date" name="departInput" value="" placeholder="Abfahrt" size="30" formmethod="post">
+              <input type="time" name="departTimeInput" value="" placeholder="departTime" size="30" formmethod="post">
+              <br>
+              <input type="date" name="arrivalInput" value="" placeholder="Rueckkehr" size="30" formmethod="post">
+              <input type="time" name="arrivalTimeInput" value="" placeholder="arrivalTime" size="30" formmethod="post">
+              <br>
+              <input type="text" name="ticketCostInput" value="" placeholder="Ticketpreis" size="30" formmethod="post">
+              <br>
 
-            <div class="navButtonContainer">
-              <a href="C:\Users\Alexander\Desktop\HTML Udemy\development_timecatch\MobileTryout\rkaselector.html" class="myButtonZurueck">Zurück</a>
-              <a href="#" class="myButton">Weiter</a>
-            </div>
+              <input type="text" name="fileNameInput" value="" placeholder="Dateiname" size="30" formmethod="post">
+              <br>
+              <!-- <img src="istos.png" alt="Logo_Istos" id="istosLogo"> -->
+
+              <div class="navButtonContainer">
+                <a href="C:\xampp\htdocs\www\timecatch\MobileTryout\rkaselector.html" class="myButtonZurueck">Zurück</a>
+                <input type="submit" name="submitForm" placeholder="Weiter">
+              </div>
+            </form>
 
           </div>
 
