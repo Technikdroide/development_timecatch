@@ -1,6 +1,6 @@
 <?php
 
-require_once "C:/xampp/htdocs/www/timecatch/MobileTryout/vendor/autoload.php";
+require_once "/var/customers/webs/ni205498_1/timecatch/MobileTryout/vendor/autoload.php";
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Reader\BaseReader;
@@ -20,6 +20,7 @@ $arrivalDateForm = DateTime::createFromFormat('d.m.Y', $arrivalInput);
 $arrivalTimeInput = $_POST['arrivalTimeInput'];
 $ticketCostInput = $_POST['ticketCostInput'];
 $fileNameInput = $_POST['fileNameInput'];
+$kostenstelleInput = $_POST['kostenstelleInput'];
 
 
 
@@ -34,7 +35,7 @@ $spreadsheet->getActiveSheet()->setCellValue('B3', 'ISTOS GmbH');
 $spreadsheet->getActiveSheet()->setCellValue('I3', $workerPlace);
 $spreadsheet->getActiveSheet()->setCellValue('C7', $nameInput);
 $spreadsheet->getActiveSheet()->setCellValue('C8', $pidInput);
-$spreadsheet->getActiveSheet()->setCellValue('C9', '130');
+$spreadsheet->getActiveSheet()->setCellValue('C9', $kostenstelleInput);
 $spreadsheet->getActiveSheet()->setCellValue('C10', "$departFrom -> $arrivalTo");
 $spreadsheet->getActiveSheet()->setCellValue('J7', $departInput);
 $spreadsheet->getActiveSheet()->setCellValue('J8', $arrivalInput);
@@ -57,6 +58,25 @@ $spreadsheet->getActiveSheet()->setCellValue('K34', '1');
 $spreadsheet->getActiveSheet()->setCellValue('N75', "=SUM(N34:N37)+SUM(N41:N47)+SUM(N52:N61)+SUM(N65:N71)");
 
 
+$diff = abs(strtotime($arrivalInput) - strtotime($departInput));
+
+
+$years = floor($diff / (365*60*60*24));
+$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+if($days == 0){
+  $spreadsheet->getActiveSheet()->setCellValue('F41', '1');
+} elseif($days <= 2){
+  $spreadsheet->getActiveSheet()->setCellValue('F41', '1');
+  $spreadsheet->getActiveSheet()->setCellValue('F43', '1');
+} elseif($days > 2){
+  $spreadsheet->getActiveSheet()->setCellValue('F41', '1');
+  $spreadsheet->getActiveSheet()->setCellValue('F42', $days-2);
+  $spreadsheet->getActiveSheet()->setCellValue('F43', '1');
+}
+
+
 $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
 $writer->setPreCalculateFormulas(false);
 $writer->save("$fileNameInput.xlsx");
@@ -72,6 +92,5 @@ if (file_exists($file)) {
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
     readfile($file);
-
 
 }
