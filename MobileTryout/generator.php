@@ -1,9 +1,12 @@
 <?php
 
-require_once "/var/customers/webs/ni205498_1/timecatch/MobileTryout/vendor/autoload.php";
+//require_once "/var/customers/webs/ni205498_1/timecatch/MobileTryout/vendor/autoload.php";
+require_once "C:/xampp/htdocs/www/timecatch/MobileTryout/vendor/autoload.php";
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Reader\BaseReader;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 $nameInput = $_POST['nameInput'];
 $pidInput = $_POST['pidInput'];
@@ -11,7 +14,8 @@ $workerPlace = $_POST['workerPlace'];
 $departFrom= $_POST['departFrom'];
 $arrivalTo= $_POST['arrivalTo'];
 $travelKindInput = $_POST['travelKindInput'];
-$travelChoiceInput = $_POST['travelChoiceInput'];
+// $travelChoiceInput = $_POST['travelChoiceInput'];
+$travelList = $_POST['travelList'];
 $departInput = $_POST['departInput'];
 $departDateForm = DateTime::createFromFormat('d.m.Y', $departInput);
 $departTimeInput = $_POST['departTimeInput'];
@@ -76,6 +80,25 @@ if($days == 0){
   $spreadsheet->getActiveSheet()->setCellValue('F43', '1');
 }
 
+if($travelList == 'Bahn'){
+  $spreadsheet->getActiveSheet()->setCellValue('I14', "Bahn");
+  $spreadsheet->getActiveSheet()->getStyle('I14')->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
+  $spreadsheet->getActiveSheet()->getStyle('I14')->getFont()->setBold(true);
+}elseif ($travelList == 'Privatwagen') {
+  $spreadsheet->getActiveSheet()->setCellValue('I14', "Bahn");
+  $spreadsheet->getActiveSheet()->getStyle('F14')->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
+  $spreadsheet->getActiveSheet()->getStyle('F14')->getFont()->setBold(true);
+}elseif ($travelList == 'Firmenwagen') {
+  $spreadsheet->getActiveSheet()->setCellValue('I14', "Bahn");
+  $spreadsheet->getActiveSheet()->getStyle('A14')->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
+  $spreadsheet->getActiveSheet()->getStyle('A14')->getFont()->setBold(true);
+}elseif ($travelList == 'Mietwagen') {
+  $spreadsheet->getActiveSheet()->setCellValue('I14', "Bahn");
+  $spreadsheet->getActiveSheet()->getStyle('C14')->getFont()->getColor()->setARGB(\PhpOffice\PhpSpreadsheet\Style\Color::COLOR_RED);
+  $spreadsheet->getActiveSheet()->getStyle('C14')->getFont()->setBold(true);
+}
+
+
 
 $writer = IOFactory::createWriter($spreadsheet, "Xlsx");
 $writer->setPreCalculateFormulas(false);
@@ -92,5 +115,7 @@ if (file_exists($file)) {
     header('Pragma: public');
     header('Content-Length: ' . filesize($file));
     readfile($file);
+    die();
 
 }
+?>

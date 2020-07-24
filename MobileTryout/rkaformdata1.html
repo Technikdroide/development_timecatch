@@ -34,7 +34,14 @@
               <br>
               <input type="text" name="ticketCostInput" value="" placeholder="Ticketpreis" size="30" formmethod="post">
               <br>
-              <input type="text" name="travelChoiceInput" value="" placeholder="Reiseart" size="30" formmethod="post">
+              <!-- <input type="text" name="travelChoiceInput" value="" placeholder="Reiseart" formmethod="post">
+              <br> -->
+              <select class="travelChoice" name="travelList" form="formType" formmethod="post">
+                <option value="Bahn">Bahn</option>
+                <option value="Dienstwagen">Dienstwagen</option>
+                <option value="Privatwagen">Privatwagen</option>
+                <option value="Mietwagen">Privatwagen</option>
+              </select>
               <br>
               <input type="date" name="departInput" value="" placeholder="Abfahrt" size="30" formmethod="post">
               <input type="time" name="departTimeInput" value="" placeholder="departTime" size="30" formmethod="post">
@@ -44,18 +51,17 @@
               <br>
               <input type="text" name="fileNameInput" value="" placeholder="Dateiname" size="30" formmethod="post">
               <br>
+
+
               <!-- <img src="istos.png" alt="Logo_Istos" id="istosLogo"> -->
 
               <div class="navButtonContainer">
-                <a href="http://ni205498-1.web11.nitrado.hosting/timecatch/MobileTryout/rkaselector.html" class="myButtonZurueck">Zurück</a>
+                <a href="http://localhost/www/timecatch/MobileTryout/rkaselector.html" class="myButtonZurueck">Zurück</a>
                 <input type="submit" id="submitForm" placeholder="Weiter">
               </div>
             </form>
 
           </div>
-
-
-
 
     </div>
   </body>
